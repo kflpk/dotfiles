@@ -144,4 +144,4 @@ export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 
 tmux
-neofetch
+pfetch
