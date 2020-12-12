@@ -2,7 +2,7 @@
 yesno=$(echo "No\nYes" | rofi -dmenu -p "Lock the screen?")
 if [ $yesno = "Yes" ]
 then
-	gnome-screensaver-command -l
+	slock
 else
 	echo "Cancelled"
 fi

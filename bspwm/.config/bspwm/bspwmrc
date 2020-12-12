@@ -1,10 +1,11 @@
 #! /bin/sh
 
+mate-polkit &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 xrandr --output "DVI-D-1" --auto --output "HDMI-0" --auto --primary --right-of "DVI-D-1"
 
-bspc monitor HDMI-0 -d 1 2 3 4 5 
+bspc monitor HDMI-0 -d 1 2 3 4 5
 bspc monitor DVI-D-1 -d 6 7 8 9 0
 bspc monitor DVI-D-1 -s HDMI-0
 
@@ -19,12 +20,13 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a Chromium desktop='^2' state=floating
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
 $HOME/.config/polybar/launch.sh &
 nitrogen --restore &
-#mpv $HOME/Music/startup.wav &
-mpv $HOME/Music/coffee-start.wav &
+mpv $HOME/Music/startup.wav &
 xsetroot -cursor_name left_ptr
+flameshot &

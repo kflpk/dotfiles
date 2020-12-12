@@ -7,20 +7,27 @@ super + u
 super + Return
 	alacritty
 # program launcher
-super + d
+super + d 
 	rofi -show drun
-# make sxhkd reload its configuration files:
+#screen lock
 super + Escape
+	slock
+# make sxhkd reload its configuration files:
+super + shift + r
 	pkill -USR1 -x sxhkd
 super + r
 	$HOME/.config/polybar/launch.sh
 
-#
+super + b
+	firefox
+#emoji picker
+super + grave
+	$HOME/.scripts/emoji.sh
 # bspwm hotkeys
 #
 
 r quit/restart bspwm
-super + alt + {q,r}
+super + alt + {q,r} 
 	bspc {quit,wm -r}
 
 # close and kill
@@ -72,7 +79,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+alt + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history

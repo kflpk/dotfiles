@@ -1,0 +1,4 @@
+#!/bin/sh
+packages=$(apt list --upgradable 2>/dev/null | sed '1d' | wc -l | sed 's/\r$//')
+echo $packages
+

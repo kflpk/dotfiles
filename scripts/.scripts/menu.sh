@@ -6,7 +6,7 @@ case $choice in
         /home/kacper/.scripts/display.sh
         ;;
     Lockscreen)
-        gnome-screensaver-command -l
+	slock
         ;; 
     Logout)
         /home/kacper/.scripts/logout.sh
