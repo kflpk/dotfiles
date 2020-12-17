@@ -1,1 +1,3 @@
 #!/bin/sh
+value=$(df -h 2>&1 | awk '/home$/ { print $4 }')
+printf "%4s" $value

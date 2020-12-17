@@ -1,0 +1,4 @@
+#!/bin/sh
+
+value=$(ssh pi@pi.local df -h | awk '/media$/ { print $4 }')
+printf "%4s" $value
