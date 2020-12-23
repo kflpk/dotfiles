@@ -72,7 +72,7 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+		PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\u \[$(tput setaf 7)\]\[$(tput setaf 6)\]\W\[$(tput setaf 3)\]]$\[$(tput setaf 6)\]: \[$(tput sgr0)\]" #rzuÃÂty
 	fi
 
 	alias grep='grep --colour=auto'
@@ -139,9 +139,18 @@ export EDITOR="nvim"
 export BROWSER="firefox"
 source ~/.config/aliases
 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:/opt/lampp
+export PATH=$PATH:/snap/bin
+export PATH=$PATH:~/programs/bin
+export PATH="$PATH:/home/kacper/programs/bin/eagle"
+export PATH="$PATH:/snap/bin"
+export PATH="$PATH:/home/kacper/.local/bin"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 #ENVIRONMENTAL VARIABLES
 #PS1="\[\033[01;32m\][\u\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\]: " #niebieski
-PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\u \[$(tput setaf 7)\]\[$(tput setaf 6)\]\W\[$(tput setaf 3)\]]$\[$(tput setaf 6)\]: \[$(tput sgr0)\]" #rzuÃÂty
+#PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\u \[$(tput setaf 7)\]\[$(tput setaf 6)\]\W\[$(tput setaf 3)\]]$\[$(tput setaf 6)\]: \[$(tput sgr0)\]" #rzuÃÂty
 
 #OTHER COMMANDS
 pfetch

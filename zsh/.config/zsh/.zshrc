@@ -19,6 +19,8 @@ export EDITOR=nvim
 #alias ai="sudo apt install" 
 #alias update="yes | sudo apt update  && yes | sudo apt upgrade"
 source ~/.config/aliases
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #PATH
 export PATH="$HOME/.cargo/bin:$PATH"

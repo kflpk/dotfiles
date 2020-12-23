@@ -1,0 +1,4 @@
+#!/bin/sh
+
+value=$(pulsemixer --get-volume | awk '{print $1}')
+printf "%3s" $value
