@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 book=$(kjv -l 2>/dev/null| shuf -n 1 | awk -F "(" '{print $1}')
 verse=$(kjv -W $book 2>/dev/null | shuf -n 1)
 echo "$book\n$verse" | cowsay

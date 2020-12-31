@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ #if [ "$HOST" = "pop-os" ]
+ #then
+     #~/.scripts/bible
+ #else
+     #pfetch
+ #fi
+case $USER in
+    kacper)
+        pfetch
+    ;;
+    pi)
+        ~/.scripts/bible
+    ;;
+    *)
+        echo hello
+    ;;
+esac

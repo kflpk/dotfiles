@@ -22,7 +22,6 @@ source ~/.config/aliases
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
 #PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:/opt/lampp
@@ -33,6 +32,4 @@ export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
-pfetch
-
-[ $HOSTNAME == "rpi4" ] && clear && ~/.scripts/bible
+~/.scripts/bible-pi
