@@ -43,7 +43,7 @@ bspc rule -a feh state=fullscreen
 bspc rule -a Eddy state=floating
 bspc rule -a Wine desktop=^7 follow=on
 bspc rule -a csgo_linux64 desktop=^7 follow=on
-bspc rule -a Steam dekstop=^7 state=floating follow=on 
+bspc rule -a Steam dekstop=^6 follow=on 
 bspc rule -a xonotic-linux64-sdl desktop=^7 state=fullscreen follow=on
 bspc rule -a xonotic-linux64-glx desktop=^7 state=fullscreen follow=on
 

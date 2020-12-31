@@ -1,3 +1,4 @@
+#/!bin/sh
 alias sdn="shutdown now"
 alias build="g++ ./main.cpp -o executable"
 alias run="./executable"
@@ -20,3 +21,4 @@ alias pbc="nvim ~/.config/polybar/config"
 alias alc="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias cfg="$EDITOR -S ~/.cfg"
 alias stowroot="sudo stow --target=/root"
+alias vimrc="$EDITOR ~/.config/nvim/init.vim"

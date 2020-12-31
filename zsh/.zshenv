@@ -19,3 +19,14 @@ export ANDROID_AVD_HOME="$XDG_DATA_HOME"/android/
 export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/
 export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:/opt/lampp
+export PATH=$PATH:/snap/bin
+export PATH=$PATH:~/programs/bin
+export PATH="$PATH:/home/kacper/programs/bin/eagle"
+export PATH="$PATH:/snap/bin"
+export PATH="$PATH:/home/kacper/.local/bin"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+source "$HOME/.cargo/env"

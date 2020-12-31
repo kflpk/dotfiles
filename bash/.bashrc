@@ -148,9 +148,7 @@ export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-#ENVIRONMENTAL VARIABLES
-#PS1="\[\033[01;32m\][\u\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\]: " #niebieski
-#PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\u \[$(tput setaf 7)\]\[$(tput setaf 6)\]\W\[$(tput setaf 3)\]]$\[$(tput setaf 6)\]: \[$(tput sgr0)\]" #rzuÃÂty
 
 #OTHER COMMANDS
 pfetch
+source "$HOME/.cargo/env"
