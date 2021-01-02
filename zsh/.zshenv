@@ -29,4 +29,4 @@ export PATH="$PATH:/home/kacper/.local/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source "$HOME/.cargo/env" >/dev/null
+source "$HOME/.cargo/env" 2>/dev/null
