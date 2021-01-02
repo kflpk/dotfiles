@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 syntax on
