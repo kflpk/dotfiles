@@ -6,14 +6,15 @@
  #else
      #pfetch
  #fi
-case $USER in
-    kacper)
+ case $(hostname) in
+    pop-os)
         pfetch
     ;;
     pi)
+        clear
         ~/.scripts/bible
     ;;
-    *)
+    jerusalem)
         echo hello
     ;;
 esac
