@@ -474,7 +474,7 @@ label = "%output%"
 initial = 1
 interval = 300
 exec = $HOME/.scripts/polybar/apt-upgradable
-click-left = bspc rule -a \* -o state=floating && alacritty -e sudo apt update && sudo apt upgrade
+click-left = bspc rule -a \* -o state=floating && alacritty -e $HOME/.scripts/polybar/apt-upgradable upgrade
 
 [module/ram]
 type = custom/script

@@ -1,8 +1,16 @@
 #!/bin/sh
 packages=$(apt list --upgradable 2>/dev/null | sed '1d' | wc -l | sed 's/\r$//')
-if [ $packages = "0" ] 
-then
-	echo ""
-else
-	echo $packages
-fi
+case $1 in 
+	upgrade)
+		sudo apt update
+		sudo apt upgrade && (figlet Updated! | lolcat; sleep 5)
+		;;
+	*)
+		if [ $packages = "0" ] 
+		then
+			echo ""
+		else
+			echo $packages
+		fi
+		;;
+esac

@@ -10,6 +10,7 @@ xsetroot -cursor_name left_ptr &
 flameshot &
 xinput --set-prop "Logitech USB-PS/2 Optical Mouse" "libinput Accel Speed" -0.45
 setxkbmap -option caps:escape
+#$HOME/.scripts/disk-standby &
 
 pulseaudio -k
 pulseuudio --start
@@ -46,6 +47,7 @@ bspc rule -a csgo_linux64 desktop=^7 follow=on
 bspc rule -a Steam dekstop=^6 follow=on 
 bspc rule -a xonotic-linux64-sdl desktop=^7 state=fullscreen follow=on
 bspc rule -a xonotic-linux64-glx desktop=^7 state=fullscreen follow=on
+bspc rule -a xpad state=floating layer=below locked=on
 
 steamlib=$HOME/.steam/steam    # path to your steamlibrary
 mygames=$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')    # this sed command removes everything but the digits

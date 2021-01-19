@@ -1,0 +1,17 @@
+#!/bin/sh
+choice=$(echo "Polybar\nsxhkd\nbspwm" | rofi -dmenu -p "Reload" -i)
+case $choice in
+	Polybar)
+		$HOME/.config/polybar/launch.sh
+ 		notify-send -t 4000 "Polybar reloaded"
+	;;
+	sxhkd)
+		pgrep -x sxhkd > /dev/null || sxhkd &
+ 		notify-send -t 4000 "Hotkeys reloaded"
+	;;
+	bspwm)
+		bspc wm -r
+	;;
+esac
+
+

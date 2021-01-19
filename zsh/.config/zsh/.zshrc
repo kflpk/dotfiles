@@ -44,6 +44,9 @@ case $(hostname) in
     jerusalem)
         PROMPT="%B%F{green}[%f%F{cyan}%?%f%F{green}][%n%f %F{cyan}%1~%f%F{green}]%#%f%F{cyan}:%f%b "
     ;;
+    alpine)
+        PROMPT="%B%F{blue}[%f%F{cyan}%?%f%F{blue}][%n%f %F{cyan}%1~%f%F{blue}]%#%f%F{cyan}:%f%b "
+    ;;
     *)
     ;;
 esac

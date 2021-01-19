@@ -10,11 +10,6 @@ super + d
 super + Escape
 	slock
 # make sxhkd reload its configuration files:
-super + shift + r
-	pkill -USR1 -x sxhkd; notify-send -t 4000 "Hotkeys reloaded"
-super + r
-# reload polybar
-	$HOME/.config/polybar/launch.sh; notify-send -t 4000 "Polybar reloaded"
 super + b
 	firefox
 #emoji picker
@@ -89,6 +84,8 @@ super + {Left,Down,Up,Right}
 # my scripts
 super + x
 	/home/kacper/.scripts/menu.sh
+super + u 
+	rofi -show window
 
 # media keys
 XF86AudioLowerVolume
@@ -107,3 +104,5 @@ XF86AudioPrev
 	playerctl previous
 Print
 	flameshot gui
+super + F11
+	$HOME/.scripts/apps/ncspot.sh	

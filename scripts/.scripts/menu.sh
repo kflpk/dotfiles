@@ -1,7 +1,10 @@
 #!/bin/sh
 
-choice=$(echo "Display\nLockscreen\nLogout\nShutdown" | rofi -dmenu -p "What do?" -i)
+choice=$(echo "Reload\nDisplay\nLockscreen\nLogout\nShutdown" | rofi -dmenu -p "What do?" -i)
 case $choice in
+    Reload)
+        /home/kacper/.scripts/reload
+        ;;
     Display)
         /home/kacper/.scripts/display.sh
         ;;
