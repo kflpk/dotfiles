@@ -5,22 +5,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000000
 SAVEHIST=100000000
 
-#ALIASES
-#alias sdn="shutdown now"
-#alias build="g++ ./main.cpp -o executable"
-#alias run="./executable"
-#alias ls=="exa"
-#alias ll="exa -lah"
-#alias md="mkdir -v -p"
-#alias zshrc="$EDITOR ~/.config/zsh/.zshrc"
-#alias yt="youtube-dl --add-metadata -ic" 
-#alias ytaudio="youtube-dl --add-metadata -xic"
-#alias pi="ssh -X pi@192.168.1.146"
-#alias pacman="pacman --color always"
-#alias tmux="tmux -2"
-#alias si="sudo snap install"
-#alias ai="sudo apt install" 
-#alias update="yes | sudo apt update  && yes | sudo apt upgrade"
 source ~/.config/aliases
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
