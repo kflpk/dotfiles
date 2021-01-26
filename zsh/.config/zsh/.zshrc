@@ -1,7 +1,7 @@
 ENABLE_CORRECTION="true"
 export EDITOR=nvim
 setopt appendhistory autocd beep extendedglob nomatch notify
-HISTFILE=~/.zsh_history
+HISTFILE=~/.cache/zsh/history
 HISTSIZE=100000000
 SAVEHIST=100000000
 
