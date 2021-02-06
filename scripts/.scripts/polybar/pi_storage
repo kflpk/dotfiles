@@ -1,4 +1,4 @@
 #!/bin/sh
 
-value=$(ssh pi@pi.local df -h 2>/dev/null | awk '/media$/ { print $4 }')
+value=$(ssh pi df -h 2>/dev/null | awk '/media$/ { print $4 }')
 printf "%6s" $value"iB"

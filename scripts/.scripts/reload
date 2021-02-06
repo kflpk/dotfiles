@@ -6,7 +6,8 @@ case $choice in
  		notify-send -t 4000 "Polybar reloaded"
 	;;
 	sxhkd)
-		pgrep -x sxhkd > /dev/null || sxhkd &
+		killall sxhkd
+		sxhkd &
  		notify-send -t 4000 "Hotkeys reloaded"
 	;;
 	bspwm)

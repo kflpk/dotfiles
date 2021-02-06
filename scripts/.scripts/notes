@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case $1 in
+	take)
+		note=$(rofi -dmenu -p "Take a note")
+		if [ $? = "0" ]
+		then
+			echo $(date '+%d.%m.%Y') $note >> ~/Documents/notes
+		fi
+	;;
+	read)
+		note=$(cat ~/Documents/notes | rofi -dmenu -p "Notes" | sed '/\n/d')
+		if [ "$note" = "clear" ]
+		then
+			> ~/Documents/notes
+		fi
+	;;
+esac

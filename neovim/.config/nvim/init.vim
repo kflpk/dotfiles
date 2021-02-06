@@ -3,6 +3,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 syntax on
@@ -36,5 +37,4 @@ let g:gruvbox_contrast_dark = 'medium'
 let g:lightline = {
             \ 'colorscheme': 'jellybeans',
             \ }
-
 colorscheme gruvbox

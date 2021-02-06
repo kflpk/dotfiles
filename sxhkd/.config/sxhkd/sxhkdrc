@@ -22,6 +22,9 @@ super + alt + {q,r}
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
+# Rotate tree
+super + shift + bracket{right,left}
+    bspc node @/ -C {forward,backward}
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
@@ -41,22 +44,22 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+super + {p,b}
+	bspc node -f @{parent,brother}
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + {comma,period}
 	bspc desktop -f {prev,next}.local
 # focus the last node/desktop
 alt + {grave,Tab}
 	bspc {node,desktop} -f last
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+#super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
@@ -83,9 +86,11 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 # my scripts
 super + x
-	/home/kacper/.scripts/menu.sh
-super + u 
-	rofi -show window
+	$HOME/.scripts/menu.sh
+super + n
+	$HOME/.scripts/notes take
+super + u
+	$HOME/.scripts/notes read
 
 # media keys
 XF86AudioLowerVolume

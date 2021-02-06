@@ -4,6 +4,9 @@
 mate-polkit &
 pgrep -x sxhkd > /dev/null || sxhkd &
 dunst &
+
+pgrep picom && killall picom
+picom -bCG
 $HOME/.config/polybar/launch.sh &
 variety &
 xsetroot -cursor_name left_ptr &
@@ -12,14 +15,15 @@ xinput --set-prop "Logitech USB-PS/2 Optical Mouse" "libinput Accel Speed" -0.45
 setxkbmap -option caps:escape
 #$HOME/.scripts/disk-standby &
 
-pulseaudio -k
-pulseuudio --start
 
 #MONITORS
-xrandr --output "DVI-D-1" --auto --output "HDMI-0" --auto --primary --right-of "DVI-D-1"
-bspc monitor HDMI-0 -d 1 2 3 4 5 6 🎮
+xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x612 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x612 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
+
+bspc monitor DVI-D-0 -d 💬 2 3 
+bspc monitor HDMI-0 -d 4 5 6 🎮
+#bspc monitor DVI-D-0 -s HDMI-0
+
 bspc monitor DVI-D-1 -d 8 9 0
-bspc monitor DVI-D-1 -s HDMI-0
 
 #BSPWM SETTINGS
 bspc config focused_border_color "#e78a4e"
@@ -32,6 +36,8 @@ bspc config window_gap         	10
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+bspc desktop -f 4
 
 #RULES
 bspc rule -r *
@@ -48,6 +54,8 @@ bspc rule -a Steam dekstop=^6 follow=on
 bspc rule -a xonotic-linux64-sdl desktop=^7 state=fullscreen follow=on
 bspc rule -a xonotic-linux64-glx desktop=^7 state=fullscreen follow=on
 bspc rule -a xpad state=floating layer=below locked=on
+bspc rule -a gnome-calculator state=floating
+bspc rule -a Signal desktop=^1 follow=on
 
 steamlib=$HOME/.steam/steam    # path to your steamlibrary
 mygames=$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')    # this sed command removes everything but the digits
