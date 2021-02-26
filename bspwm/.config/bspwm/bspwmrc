@@ -17,7 +17,7 @@ setxkbmap -option caps:escape
 
 
 #MONITORS
-xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x612 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x612 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
+xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x420 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x420 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
 
 bspc monitor DVI-D-0 -d 💬 2 3 
 bspc monitor HDMI-0 -d 4 5 6 🎮
@@ -56,6 +56,12 @@ bspc rule -a xonotic-linux64-glx desktop=^7 state=fullscreen follow=on
 bspc rule -a xpad state=floating layer=below locked=on
 bspc rule -a gnome-calculator state=floating
 bspc rule -a Signal desktop=^1 follow=on
+bspc rule -a SimpleScreenRecorder state=floating
+bspc rule -a Totem state=floating rectangle=600x800
+bspc rule -a Toolkit state=floating
+
+#SCRIPTS
+~/.scripts/bspwm/cleanfullscreen
 
 steamlib=$HOME/.steam/steam    # path to your steamlibrary
 mygames=$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')    # this sed command removes everything but the digits

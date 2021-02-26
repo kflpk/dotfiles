@@ -107,6 +107,8 @@ XF86AudioNext
 	playerctl next
 XF86AudioPrev
 	playerctl previous
+super + XF86AudioPlay
+	mpc toggle
 Print
 	flameshot gui
 super + F11

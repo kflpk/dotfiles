@@ -21,6 +21,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
 ~/.scripts/bible-pi
 
+#KEYBINDS
+bindkey ';5D' backward-word
+bindkey ';5C' forward-word
+
 case $(hostname) in 
     rpi4)
         PROMPT="%B%F{red}[%f%F{cyan}%?%f%F{red}][%n%f %F{cyan}%1~%f%F{red}]%#%f%F{cyan}:%f%b "

@@ -150,9 +150,21 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 #OTHER COMMANDS
-pfetch
+#pfetch
 source "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#function msdos_pwd
+#{
+#    local dir="`pwd`"
+#
+#    echo $dir | tr '/' '\\'
+#}
+
+#export PS1='C:`msdos_pwd`> '
+#clear
+#echo "Microsoft Windows [Version `uname -r`]"
+#echo "Copyright (c) `date +%Y` Microsoft Corporation. All righs reserved."
+#echo
