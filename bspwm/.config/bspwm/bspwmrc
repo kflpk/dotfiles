@@ -4,8 +4,8 @@
 mate-polkit &
 pgrep -x sxhkd > /dev/null || sxhkd &
 dunst &
-
-pgrep picom && killall picom
+siema
+pgrep picom && killall picom 
 picom -bCG
 $HOME/.config/polybar/launch.sh &
 variety &
@@ -13,6 +13,7 @@ xsetroot -cursor_name left_ptr &
 flameshot &
 xinput --set-prop "Logitech USB-PS/2 Optical Mouse" "libinput Accel Speed" -0.45
 setxkbmap -option caps:escape
+kdeconnect-indicator &
 #$HOME/.scripts/disk-standby &
 
 
@@ -59,7 +60,12 @@ bspc rule -a Signal desktop=^1 follow=on
 bspc rule -a SimpleScreenRecorder state=floating
 bspc rule -a Totem state=floating rectangle=600x800
 bspc rule -a Toolkit state=floating
-
+bspc rule -a Gnome-calendar state=pseudo_tiled
+bspc rule -a Gnome-todo state=pseudo_tiled
+bspc rule -a Gnome-font-viewer state=pseudo_tiled
+bspc rule -a Bitwarden state=pseudo_tiled
+bspc rule -a Bijiben state=pseudo_tiled
+bspc rule -a File-roller state=floating
 #SCRIPTS
 ~/.scripts/bspwm/cleanfullscreen
 
