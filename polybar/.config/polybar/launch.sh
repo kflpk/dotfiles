@@ -10,5 +10,5 @@ while pgrep -u 1001 -x polybar >/dev/null; do sleep 1; done
 polybar example &
 polybar left &
 polybar vertical &
-
+[ "$(cat /etc/hostname)" = "asus" ] && polybar laptop &
 echo "Polybar launched..."
