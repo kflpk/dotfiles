@@ -72,3 +72,6 @@ function precmd() {
 function gen() {
 head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d "\n"
 }
+function v() {
+	(cd $1; nvim)
+}

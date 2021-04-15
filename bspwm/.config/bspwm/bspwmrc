@@ -1,11 +1,13 @@
 #! /bin/sh
 
+source ~/.zshenv
+
 #AUTOSTART
 mate-polkit &
 pgrep -x sxhkd > /dev/null || sxhkd &
 dunst &
 siema
-pgrep picom && killall picom 
+pgrep picom && killall picom
 picom -bCG
 $HOME/.config/polybar/launch.sh &
 variety &
@@ -14,13 +16,18 @@ flameshot &
 xinput --set-prop "Logitech USB-PS/2 Optical Mouse" "libinput Accel Speed" -0.45
 setxkbmap -option caps:escape
 kdeconnect-indicator &
+$HOME/.local/bin/nextcloud-client &
 #$HOME/.scripts/disk-standby &
-
+$HOME/.scripts/week/monday.sh &
+$HOME/.scripts/week/tuesday.sh &
+$HOME/.scripts/week/wednesday.sh &
+$HOME/.scripts/week/thursday.sh &
+$HOME/.scripts/week/friday.sh &
 
 #MONITORS
 xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x420 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x420 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
 
-bspc monitor DVI-D-0 -d 💬 2 3 
+bspc monitor DVI-D-0 -d 💬 2 3
 bspc monitor HDMI-0 -d 4 5 6 🎮
 #bspc monitor DVI-D-0 -s HDMI-0
 
@@ -51,7 +58,7 @@ bspc rule -a feh state=fullscreen
 bspc rule -a Eddy state=floating
 bspc rule -a Wine desktop=^7 follow=on
 bspc rule -a csgo_linux64 desktop=^7 follow=on
-bspc rule -a Steam dekstop=^6 follow=on 
+bspc rule -a Steam dekstop=^6 follow=on
 bspc rule -a xonotic-linux64-sdl desktop=^7 state=fullscreen follow=on
 bspc rule -a xonotic-linux64-glx desktop=^7 state=fullscreen follow=on
 bspc rule -a xpad state=floating layer=below locked=on
@@ -66,6 +73,7 @@ bspc rule -a Gnome-font-viewer state=pseudo_tiled
 bspc rule -a Bitwarden state=pseudo_tiled
 bspc rule -a Bijiben state=pseudo_tiled
 bspc rule -a File-roller state=floating
+
 #SCRIPTS
 ~/.scripts/bspwm/cleanfullscreen
 
@@ -73,5 +81,5 @@ steamlib=$HOME/.steam/steam    # path to your steamlibrary
 mygames=$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')    # this sed command removes everything but the digits
 
 for game in $mygames; do
-    bspc rule -a steam_app_$game desktop=^7 state=fullscreen follow=on 
+    bspc rule -a steam_app_$game desktop=^7 state=fullscreen follow=on
 done

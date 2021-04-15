@@ -5,6 +5,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'cespare/vim-toml'
+Plug 'csexton/trailertrash.vim'
 call plug#end()
 
 syntax on
@@ -22,7 +23,14 @@ set relativenumber
 set clipboard=unnamedplus
 set incsearch
 set autoread
-au CursorHold,CursorHoldI * checktime
+set listchars=tab:\|\ ",trail:~
+set list
+set backupcopy=yes
+au CursorHold,CursorHoldI * checktime "doesn't seem to work
+
+"highlight trailing spaces
+"highlight ExtraWhitespace ctermbg=red 
+"match ExtraWhitespace /\s\+$/
 
 let mapleader = " "
 map <C-h> :wincmd h<CR>
@@ -30,6 +38,8 @@ map <C-j> :wincmd j<CR>
 map <C-k> :wincmd k<CR>
 map <C-l> :wincmd l<CR>
 map <C-s> :w<CR>
+"ctrl+slash
+map <C-_> :noh<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
