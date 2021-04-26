@@ -1,8 +1,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'preservim/nerdtree'
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'cespare/vim-toml'
 Plug 'csexton/trailertrash.vim'
@@ -48,7 +49,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let g:gruvbox_bold = 1
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'medium'
-let g:lightline = {
-            \ 'colorscheme': 'jellybeans',
-            \ }
+"let g:lightline = {
+"            \ 'colorscheme': 'jellybeans',
+"            \ }
 colorscheme gruvbox
+let g:airline_theme='gruvbox'

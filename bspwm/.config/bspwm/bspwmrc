@@ -79,6 +79,7 @@ bspc rule -a Gnome-font-viewer state=pseudo_tiled
 bspc rule -a Bitwarden state=pseudo_tiled
 bspc rule -a Bijiben state=pseudo_tiled
 bspc rule -a File-roller state=floating
+bspc rule -a QOwnNotes stat=floating
 
 #SCRIPTS
 ~/.scripts/bspwm/cleanfullscreen

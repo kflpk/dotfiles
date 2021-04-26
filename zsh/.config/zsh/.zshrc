@@ -21,6 +21,8 @@ export PATH="$PATH:$HOME/bin:/usr/local/bin"
 #PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
 ~/.scripts/bible-pi
 
+rm ~/.lesshst 2>/dev/null
+
 #KEYBINDS
 bindkey ';5D' backward-word
 bindkey ';5C' forward-word
