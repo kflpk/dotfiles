@@ -123,7 +123,7 @@ font-3 = Ubuntu Mono:size=11;1
 
 modules-left = bspwm 
 modules-center = xwindow
-modules-right = apt-upgradable ram cpu-temp volume date
+modules-right = apt-upgradable ram cpu-temp battery volume date
 
 tray-position = right
 tray-padding = 2
