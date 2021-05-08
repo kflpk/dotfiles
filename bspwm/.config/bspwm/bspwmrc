@@ -7,8 +7,6 @@ mate-polkit &
 pgrep -x sxhkd > /dev/null || sxhkd &
 dunst &
 pgrep picom && killall picom
-=======
-pgrep picom && killall picom 
 picom -bCG
 $HOME/.config/polybar/launch.sh &
 variety &

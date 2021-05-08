@@ -44,6 +44,8 @@ case $(hostname) in
     ;;
 esac
 
+[ "$TTY" = "/dev/tty1" ] && startx
+
 function preexec() {
   timer=$(($(date +%s%0N)/1000000))
 }

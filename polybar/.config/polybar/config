@@ -74,7 +74,7 @@ font-3 = Ubuntu Mono:size=11;1
 
 modules-left = bspwm 
 modules-center = xwindow
-modules-right = apt-upgradable ram pi_storage storage cpu-temp volume popup-calendar
+modules-right = apt-upgradable ram linode pi_storage storage cpu-temp volume popup-calendar
 
 tray-position = right
 ray-padding = 2
@@ -564,7 +564,7 @@ label = "%output%"
 initial = 1
 interval = 10
 exec = $HOME/.scripts/polybar/ram 
-click-left = $HOME/.scripts/apps/bashtop.sh
+click-left = ($HOME/.scripts/apps/bashtop.sh) &
 
 [module/cpu-temp]
 type = custom/script
@@ -597,6 +597,18 @@ initial = 1
 interval = 10
 exec = $HOME/.scripts/polybar/storage 
 
+[module/linode]
+type = custom/script
+format-foreground = ${colors.foreground}
+format-prefix = "🍋 " 
+format-underline = ${colors.primary}
+format-padding = 1
+label = "%output%"
+initial = 1
+interval = 300
+exec = $HOME/.scripts/polybar/linode
+click-left = (alacritty -e ssh linode) &
+
 [module/pi_storage]
 type = custom/script
 format-foreground = ${colors.foreground}
@@ -607,6 +619,7 @@ label = "%output%"
 initial = 1
 interval = 60
 exec = $HOME/.scripts/polybar/pi_storage 
+click-left = (alacritty -e ssh pi) &
 
 [module/volume]
 type = custom/ipc
