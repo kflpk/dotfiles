@@ -12,9 +12,9 @@ call plug#end()
 syntax on
 
 set noshowmode
-"set tabstop=4
-"set softtabstop=4
-"set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 "set noexpandtab
 "set smartindent
 set noswapfile
@@ -24,10 +24,12 @@ set relativenumber
 set clipboard=unnamedplus
 set incsearch
 set autoread
-set listchars=tab:\|\ ",trail:~
-set list
-set backupcopy=yes
-au CursorHold,CursorHoldI * checktime "doesn't seem to work
+" set listchars=eol:¬,tab:\>-\ ,trail:~,extends:>,precedes:<,space:␣
+	" set list
+	" set backupcopy=yes
+set undofile
+set undodir=~/.cache/nvim/undo
+"au CursorHold,CursorHoldI * checktime "doesn't seem to work
 
 "highlight trailing spaces
 "highlight ExtraWhitespace ctermbg=red 
