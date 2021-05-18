@@ -24,9 +24,9 @@ set relativenumber
 set clipboard=unnamedplus
 set incsearch
 set autoread
-" set listchars=eol:¬,tab:\>-\ ,trail:~,extends:>,precedes:<,space:␣
-	" set list
-	" set backupcopy=yes
+ set listchars=eol:¬,tab:\>-\ ,trail:~,extends:>,precedes:<,space:␣
+	 set list
+	 set backupcopy=yes
 set undofile
 set undodir=~/.cache/nvim/undo
 "au CursorHold,CursorHoldI * checktime "doesn't seem to work

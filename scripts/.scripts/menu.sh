@@ -1,6 +1,10 @@
 #!/bin/sh
 
-choice=$(echo "Reload\nDisplay\nLockscreen\nLogout\nShutdown" | rofi -dmenu -p "What do?" -i)
+choice=$(echo "Reload
+Display
+Lockscreen
+Logout
+Shutdown" | rofi -dmenu -p "What do?" -i)
 case $choice in
     Reload)
         /home/kacper/.scripts/reload

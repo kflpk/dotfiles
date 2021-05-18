@@ -19,7 +19,6 @@ export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 export PATH="$PATH:$HOME/bin:/usr/local/bin"
 #PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
-~/.scripts/bible-pi
 
 rm ~/.lesshst 2>/dev/null
 
@@ -27,11 +26,11 @@ rm ~/.lesshst 2>/dev/null
 bindkey ';5D' backward-word
 bindkey ';5C' forward-word
 
-case $(hostname) in 
+case $(cat /etc/hostname) in 
     rpi4)
         PROMPT="%B%F{red}[%f%F{cyan}%?%f%F{red}][%n%f %F{cyan}%1~%f%F{red}]%#%f%F{cyan}:%f%b "
     ;;
-    pop-os)
+    arch)
         PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
     ;;
     jerusalem)

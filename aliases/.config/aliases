@@ -22,7 +22,7 @@ alias cfg="$EDITOR -S ~/.cfg"
 alias stowroot="sudo stow --target=/root"
 alias vimrc="$EDITOR ~/.config/nvim/init.vim"
 alias ytarchive='youtube-dl --download-archive "archive.log" --add-metadata --all-subs -f "bestvideo[height<=1080]+bestaudio/best" -ciw -o "%(upload_date)s %(title)s.%(ext)s"'
-alias gimme="sudo apt install"
+alias gimme="sudo pacman -S"
 alias yeet="sudo apt remove --purge"
 alias :q="exit"
 alias llbat="exa -lah --color=always | bat"

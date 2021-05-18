@@ -1,5 +1,7 @@
 #!/bin/sh
-choice=$(echo "Polybar\nsxhkd\nbspwm" | rofi -dmenu -p "Reload" -i)
+choice=$(echo "Polybar
+sxhkd
+bspwm" | rofi -dmenu -p "Reload" -i)
 case $choice in
 	Polybar)
 		$HOME/.config/polybar/launch.sh
