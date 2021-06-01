@@ -1,4 +1,12 @@
 #!/bin/sh
 
-value=$(ssh pi df -h 2>/dev/null | awk '/media$/ { print $4 }')
-printf "%6s" $value"iB"
+
+if [ "$1" = "click" ]
+then
+	export TERM=xterm-256color
+	alacritty -e ssh pi &
+else
+	value=$(ssh pi df -h 2>/dev/null | awk '/media$/ { print $4 }')
+	printf "%6s" $value"iB"
+fi
+

@@ -7,7 +7,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # zsh config dotfiles
-
 #compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION # zsh autocomplete cache
 export ZDOTDIR="$HOME/.config/zsh" # zsh dotfiles location
 #export HISTFILE="$XDG_DATA_HOME"/zsh/history # zsh history file
@@ -30,3 +29,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source "$HOME/.cargo/env" 2>/dev/null
+
+# Other stuff
+export TERM=xterm-256color

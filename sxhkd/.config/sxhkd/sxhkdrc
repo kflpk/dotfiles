@@ -2,12 +2,15 @@
 # terminal emulator
 super + Return
 	alacritty
+# floating terminal
+alt + Return
+	~/.scripts/apps/alacritty.sh
 # program launcher
 super + d
 	rofi -show drun
 #file manager
 super + e
-	nemo
+	pcmanfm
 #ranger
 super + shift + e
 	alacritty -e ranger

@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'preservim/nerdtree'
 "Plug 'itchyny/lightline.vim'
@@ -7,6 +8,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'cespare/vim-toml'
 Plug 'csexton/trailertrash.vim'
+Plug 'habamax/vim-godot'
 call plug#end()
 
 syntax on
@@ -29,11 +31,22 @@ set autoread
 	 set backupcopy=yes
 set undofile
 set undodir=~/.cache/nvim/undo
+set signcolumn=yes
 "au CursorHold,CursorHoldI * checktime "doesn't seem to work
 
 "highlight trailing spaces
 "highlight ExtraWhitespace ctermbg=red 
 "match ExtraWhitespace /\s\+$/
+
+" This gets rid of the nasty _ italic bug in tpope's vim-markdown
+" block $$...$$
+syn region math start=/\$\$/ end=/\$\$/
+" inline math
+syn match math '\$[^$].\{-}\$'
+
+" actually highlight the region we defined as "math"
+hi link math Statement
+
 
 let mapleader = " "
 map <C-h> :wincmd h<CR>
@@ -51,8 +64,41 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let g:gruvbox_bold = 1
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'medium'
+let g:neovide_cursor_vfx_mode = "railgun"
 "let g:lightline = {
 "            \ 'colorscheme': 'jellybeans',
 "            \ }
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
+
+
+" Godot specific stuff
+
+func! GodotSettings() abort
+    "setlocal foldmethod=expr
+    "setlocal tabstop=4
+    nnoremap <buffer> <F4> :GodotRunLast<CR>
+    nnoremap <buffer> <F5> :GodotRun<CR>
+    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
+    nnoremap <buffer> <F7> :GodotRunFZF<CR>
+endfunc
+augroup godot | au!
+    au FileType gdscript call GodotSettings()
+augroup end
+
+
+let g:ale_linters = {
+    \ 'python': ['pylint'],
+    \ 'vim': ['vint'],
+    \ 'cpp': ['clang'],
+    \ 'c': ['clang']
+\}
+
+
+" custom setting for clangformat
+let g:neoformat_cpp_clangformat = {
+    \ 'exe': 'clang-format',
+    \ 'args': ['--style="{IndentWidth: 4}"']
+\}
+let g:neoformat_enabled_cpp = ['clangformat']
+let g:neoformat_enabled_c = ['clangformat']
