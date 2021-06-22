@@ -13,19 +13,19 @@ xsetroot -cursor_name left_ptr &
 flameshot &
 xinput --set-prop "Logitech USB-PS/2 Optical Mouse" "libinput Accel Speed" -0.45
 setxkbmap -option caps:escape
-kdeconnect-indicator &
 
 #MONITORS
 
 xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x420 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x420 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
 
-bspc monitor DVI-D-0 -d 💬 2 3
+bspc monitor DVI-D-1 -d 💬 2 3
 
 [ "$(cat /etc/hostname)" = "arch" ] && xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x420 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x420 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
 [ "$(cat /etc/hostname)" = "asus" ] && xrandr --output e-DP-1-1 --mode 1366x768
-bspc monitor DVI-D-0 -d 💬 2 3 
-bspc monitor HDMI-0 -d 4 5 6 🎮
-bspc monitor DVI-D-1 -d 8 9 0
+[ "$(cat /etc/hostname)" = "mate-pc" ] && xrandr --output DVI-D-1 --mode 1920x1080 --pos 0x396 --rotate normal --output DVI-D-2 --mode 1920x1080 --pos 3840x0 --rotate left --output HDMI-1 --mode 1920x1080 --pos 1920x396 --rotate normal --output DP-1 --off
+bspc monitor DVI-D-1 -d 💬 2 3 
+bspc monitor HDMI-1 -d 4 5 6 🎮
+bspc monitor DVI-D-2 -d 8 9 0
 
 [ "$(cat /etc/hostname)" = "asus" ] && bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9 0
 

@@ -29,6 +29,6 @@ colors:
     white:   '0xdfbf8e'
 font:
   normal:
-    family: Fira Code
+    family: JetBrains Mono
     style: Regular
   size: 10

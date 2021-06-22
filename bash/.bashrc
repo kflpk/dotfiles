@@ -168,3 +168,4 @@ export NVM_DIR="$HOME/.config/nvm"
 #echo "Microsoft Windows [Version `uname -r`]"
 #echo "Copyright (c) `date +%Y` Microsoft Corporation. All righs reserved."
 #echo
+. "$HOME/.cargo/env"

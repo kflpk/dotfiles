@@ -22,7 +22,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:/opt/lampp
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:~/programs/bin
-export PATH="$PATH:/home/kacper/programs/bin/eagle"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -32,3 +31,4 @@ source "$HOME/.cargo/env" 2>/dev/null
 
 # Other stuff
 export TERM=xterm-256color
+. "$HOME/.cargo/env"
