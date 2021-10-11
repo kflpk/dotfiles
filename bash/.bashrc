@@ -170,6 +170,6 @@ export NVM_DIR="$HOME/.config/nvm"
 #echo
 . "$HOME/.cargo/env"
 
-if [ "$HOST" = "student" ]; then
+if [ "$HOSTNAME" = "student.agh.edu.pl" ]; then
 	zsh
 fi
