@@ -172,4 +172,5 @@ export NVM_DIR="$HOME/.config/nvm"
 
 if [ "$HOSTNAME" = "student.agh.edu.pl" ]; then
 	zsh
+	exit
 fi
