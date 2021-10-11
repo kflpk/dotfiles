@@ -3,7 +3,7 @@
 choice=$(echo "Reload
 Display
 Lockscreen
-Logout
+Suspend
 Shutdown" | rofi -dmenu -p "What do?" -i)
 case $choice in
     Reload)
@@ -13,10 +13,12 @@ case $choice in
         /home/kacper/.scripts/display.sh
         ;;
     Lockscreen)
-	slock
+		slock
         ;; 
-    Logout)
-        /home/kacper/.scripts/logout.sh
+    Suspend)
+		slock &
+		sleep 1s
+		/bin/systemctl suspend
         ;;
     Shutdown)
         /home/kacper/.scripts/shutdown.sh

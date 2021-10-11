@@ -25,9 +25,10 @@ export PATH=$PATH:~/programs/bin
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source "$HOME/.cargo/env" 2>/dev/null
+if [ -e $HOME/.cargo/env ]; then
+	source "$HOME/.cargo/env" 2>/dev/null
+fi
 
 # Other stuff
 export TERM=xterm-256color

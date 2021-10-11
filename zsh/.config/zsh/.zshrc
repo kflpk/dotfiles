@@ -40,6 +40,7 @@ case $(cat /etc/hostname) in
         PROMPT="%B%F{blue}[%f%F{cyan}%?%f%F{blue}][%n%f %F{cyan}%1~%f%F{blue}]%#%f%F{cyan}:%f%b "
     ;;
     *)
+        PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
     ;;
 esac
 
