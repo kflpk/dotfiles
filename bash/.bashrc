@@ -151,7 +151,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 #OTHER COMMANDS
 #pfetch
-source "$HOME/.cargo/env"
+source "$HOME/.cargo/env" 2>/dev/null
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -168,7 +168,6 @@ export NVM_DIR="$HOME/.config/nvm"
 #echo "Microsoft Windows [Version `uname -r`]"
 #echo "Copyright (c) `date +%Y` Microsoft Corporation. All righs reserved."
 #echo
-. "$HOME/.cargo/env"
 
 if [ "$HOSTNAME" = "student.agh.edu.pl" ]; then
 	zsh
