@@ -24,6 +24,7 @@ export PATH=$PATH:/snap/bin
 export PATH=$PATH:~/programs/bin
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 if [ -e $HOME/.cargo/env ]; then
