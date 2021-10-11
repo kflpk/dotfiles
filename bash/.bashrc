@@ -169,3 +169,7 @@ export NVM_DIR="$HOME/.config/nvm"
 #echo "Copyright (c) `date +%Y` Microsoft Corporation. All righs reserved."
 #echo
 . "$HOME/.cargo/env"
+
+if [ "$HOST" = "student" ]; then
+	zsh
+fi
