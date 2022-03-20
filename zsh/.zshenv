@@ -26,6 +26,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/opt/lampp"
+export PATH="$PATH:$HOME/node_modules/.bin"
 
 if [ -e $HOME/.cargo/env ]; then
 	source "$HOME/.cargo/env" 2>/dev/null
