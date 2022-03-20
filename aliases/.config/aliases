@@ -39,7 +39,7 @@ else if [ -e /bin/pacman ]; then
   alias yeet="sudo pacman -Rs"
 else if [ -e /bin/dnf ]; then
   alias gimme="sudo dnf install"
-  alisa yee="sudo dnf remove"
+  alias yeet="sudo dnf remove"
 fi
 fi
 fi
