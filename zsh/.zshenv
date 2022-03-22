@@ -23,6 +23,7 @@ export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"
 # Path
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/opt/lampp"
@@ -34,3 +35,4 @@ fi
 
 # Other stuff
 export TERM=xterm-256color
+export DOTNET_CLI_TELEMETRY_OPTOUT=1 # disables dotnet telemetry

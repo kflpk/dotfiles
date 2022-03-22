@@ -76,6 +76,17 @@ function precmd() {
 function gen() {
 head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d "\n"
 }
-function v() {
-	(cd $1; nvim)
+
+function picka() {
+	if [ "$1" = "mrozona" ]; then
+		countdown 12m && mpv ~/Muzyka/arabic.mp3
+	else if [ "$1" = "donatello" ]; then
+		countdown 6m && mpv ~/Muzyka/arabic.mp3
+	fi
+	fi
 }
+
+function sex() {
+	countdown 12s && mpv ~/Muzyka/arabic.mp3
+}
+
