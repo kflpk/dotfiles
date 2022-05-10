@@ -173,3 +173,4 @@ if [ "$HOSTNAME" = "student.agh.edu.pl" ]; then
 	zsh
 	exit
 fi
+. "$HOME/.cargo/env"

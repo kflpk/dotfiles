@@ -27,7 +27,7 @@ rm ~/.lesshst 2>/dev/null
 #bindkey ';5C' forward-word
 
 case $(cat /etc/hostname) in 
-    rpi4)
+    marcinek)
         PROMPT="%B%F{red}[%f%F{cyan}%?%f%F{red}][%n%f %F{cyan}%1~%f%F{red}]%#%f%F{cyan}:%f%b "
     ;;
     msi)
