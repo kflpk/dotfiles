@@ -26,23 +26,38 @@ rm ~/.lesshst 2>/dev/null
 #bindkey ';5D' backward-word
 #bindkey ';5C' forward-word
 
-case $(cat /etc/hostname) in 
-    marcinek)
-        PROMPT="%B%F{red}[%f%F{cyan}%?%f%F{red}][%n%f %F{cyan}%1~%f%F{red}]%#%f%F{cyan}:%f%b "
-    ;;
-    msi)
-        PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
-    ;;
-    jerusalem)
-        PROMPT="%B%F{green}[%f%F{cyan}%?%f%F{green}][%n%f %F{cyan}%1~%f%F{green}]%#%f%F{cyan}:%f%b "
-    ;;
-    alpine)
-        PROMPT="%B%F{blue}[%f%F{cyan}%?%f%F{blue}][%n%f %F{cyan}%1~%f%F{blue}]%#%f%F{cyan}:%f%b "
-    ;;
-    *)
-        PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
-    ;;
-esac
+function setprompt() {
+
+	case $(cat /etc/hostname) in
+		marcinek)
+			PCLR="red"
+			#PROMPT="%B%F{red}[%f%F{cyan}%?%f%F{red}][%n%f %F{cyan}%1~%f%F{red}]%#%f%F{cyan}:%f%b "
+		;;
+		jerusalem)
+			PCLR="green"
+			#PROMPT="%B%F{green}[%f%F{cyan}%?%f%F{green}][%n%f %F{cyan}%1~%f%F{green}]%#%f%F{cyan}:%f%b "
+		;;
+		alpine)
+			PCLR="blue"
+			#PROMPT="%B%F{blue}[%f%F{cyan}%?%f%F{blue}][%n%f %F{cyan}%1~%f%F{blue}]%#%f%F{cyan}:%f%b "
+		;;
+		*)
+			PCLR="yellow"
+			#PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
+		;;
+	esac
+
+	if git status > /dev/null 2>&1                                                                                                                                                                                     0.004s
+	then
+		BRANCH="%f%B%F{$PCLR}(%f%F{cyan}$(git status | awk '{print $NF}' | sed 1q)%f%F{$PCLR})"
+	else
+		BRANCH=""
+	fi
+
+	PROMPT="%B%F{$PCLR}[%f%F{cyan}%?%f%F{$PCLR}][%n%f %F{cyan}%1~%f%F{$PCLR}]$BRANCH%#%f%F{cyan}:%f%b "
+}
+
+
 
 [ "$TTY" = "/dev/tty1" ] && startx
 
@@ -51,6 +66,7 @@ function preexec() {
 }
 
 function precmd() {
+
   if [ $timer ]; then
     now=$(($(date +%s%0N)/1000000))
     elapsed=$(($now-$timer))
@@ -72,6 +88,8 @@ function precmd() {
     fi
     unset timer
   fi
+
+  setprompt
 }
 function gen() {
 head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d "\n"
@@ -90,3 +108,4 @@ function sex() {
 	countdown 12s && mpv ~/Muzyka/arabic.mp3
 }
 
+setprompt
