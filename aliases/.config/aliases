@@ -28,6 +28,7 @@ alias llbat="exa --icons -lah --color=always | bat"
 alias bat="bat --theme gruvbox-dark"
 alias grep="grep --color=auto"
 alias cat='bat -p --paging=never'
+alias adog='git adog'
 #alias gimme="sudo apt install"
 #
 
