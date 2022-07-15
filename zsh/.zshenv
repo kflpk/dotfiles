@@ -35,6 +35,6 @@ if [ -e $HOME/.cargo/env ]; then
 fi
 
 # Other stuff
-export TERM=xterm-256color
+export TERM='xterm-256color'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1 # disables dotnet telemetry
 . "$HOME/.cargo/env"

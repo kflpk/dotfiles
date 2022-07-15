@@ -114,4 +114,7 @@ function sex() {
 	countdown 12s && mpv ~/Muzyka/arabic.mp3
 }
 
+tmux
 setprompt
+
+export TERM='xterm-256color'
