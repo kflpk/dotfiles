@@ -18,6 +18,7 @@ export PATH="$PATH:/home/kacper/programs/bin/eagle"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
 export PATH="$PATH:$HOME/bin:/usr/local/bin"
+export PATH="$PATH:/home/kacper/.spicetify"
 #PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
 
 rm ~/.lesshst 2>/dev/null

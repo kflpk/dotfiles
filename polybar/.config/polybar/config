@@ -40,7 +40,7 @@ alert = #ea6962
 
 [bar/example]
 enable-ipc = true
-monitor = default
+monitor = HDMI-0
 width = 100%
 height = 26
 ;offset-x = 1%
@@ -74,7 +74,7 @@ font-3 = Fira Code:size=11;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = apt-upgradable ram linode pi_storage storage cpu-temp volume popup-calendar
+modules-right = apt-upgradable ram linode pi_storage storage cpu-temp volume
 
 tray-position = right
 ray-padding = 2
