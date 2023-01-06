@@ -33,6 +33,12 @@ mpd_music_dir = /media/archive/Music/
 user	"kacper"
 group	"kacper"
 
+#visualizer_data_source = "/tmp/mpd.fifo"
+#visualizer_output_name = "Visualizer feed"
+# visualizer_in_stereo = "yes"
+# visualizer_type = "spectrum"
+# visualizer_look = "+|"
+
 #mpd_crossfade_time = 5
 #
 ##### music visualizer #####
@@ -42,12 +48,12 @@ group	"kacper"
 ## visualization or 44100:16:2 for stereo visualization. Example configuration
 ## (it has to be put into mpd.conf):
 ##
-## audio_output {
-##        type            "fifo"
-##        name            "Visualizer feed"
-##        path            "/tmp/mpd.fifo"
-##        format          "44100:16:2"
-## }
+#	audio_output {
+#       type            "spectrum"
+#       name            "Visualizer feed"
+#       path            "/tmp/mpd.fifo"
+#       format          "44100:16:2"
+#}
 ##
 #
 #visualizer_fifo_path = /tmp/mpd.fifo
@@ -271,7 +277,7 @@ group	"kacper"
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -543,3 +549,8 @@ progressbar_look = "▃▃▃"
 #
 #active_window_border = red
 #
+#visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer feed"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "━╏"

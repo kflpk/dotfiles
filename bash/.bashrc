@@ -140,14 +140,15 @@ export BROWSER="firefox"
 source ~/.config/aliases
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH=$PATH:/opt/lampp
-export PATH=$PATH:/snap/bin
-export PATH=$PATH:~/programs/bin
+export PATH="$PATH:/opt/lampp"
+export PATH="$PATH:/snap/bin"
+export PATH="$PATH:$HOME/programs/bin"
 export PATH="$PATH:/home/kacper/programs/bin/eagle"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:/home/kacper/.local/bin"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:/sbin"
 
 #OTHER COMMANDS
 #pfetch
@@ -173,4 +174,7 @@ if [ "$HOSTNAME" = "student.agh.edu.pl" ]; then
 	zsh
 	exit
 fi
-. "$HOME/.cargo/env"
+
+if [ -e "$HOME/.cargo/env" ]; then
+	. "$HOME/.cargo/env"
+fi

@@ -6,7 +6,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'cespare/vim-toml'
-Plug 'csexton/trailertrash.vim'
+" Plug 'csexton/trailertrash.vim'
 Plug 'habamax/vim-godot'
 call plug#end()
 
@@ -25,9 +25,9 @@ set relativenumber
 set clipboard=unnamedplus
 set incsearch
 set autoread
- set listchars=eol:¬,tab:\>-\ ,trail:~,extends:>,precedes:<,space:␣
-	 set list
-	 set backupcopy=yes
+" set listchars=eol:¬,tab:\>-\ ,trail:~,extends:>,precedes:<,space:␣
+set list
+set backupcopy=yes
 set undofile
 set undodir=~/.cache/nvim/undo
 set signcolumn=yes
@@ -69,22 +69,6 @@ let g:neovide_cursor_vfx_mode = "railgun"
 "            \ }
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
-
-
-" Godot specific stuff
-
-func! GodotSettings() abort
-    "setlocal foldmethod=expr
-    "setlocal tabstop=4
-    nnoremap <buffer> <F4> :GodotRunLast<CR>
-    nnoremap <buffer> <F5> :GodotRun<CR>
-    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
-    nnoremap <buffer> <F7> :GodotRunFZF<CR>
-endfunc
-augroup godot | au!
-    au FileType gdscript call GodotSettings()
-augroup end
-
 
 let g:ale_linters = {
     \ 'python': ['pylint'],
