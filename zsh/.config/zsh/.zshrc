@@ -1,7 +1,12 @@
 ENABLE_CORRECTION="true"
 export EDITOR=nvim
 setopt appendhistory autocd beep extendedglob nomatch notify
+
 HISTFILE=~/.cache/zsh/history
+if [[ ! -f $HISTFILE ]] then # Creates history file if it doesn't exist
+	mkdir -p ~/.cache/zsh
+	touch "$HISTFILE"
+fi
 HISTSIZE=100000000
 SAVEHIST=100000000
 
@@ -58,10 +63,6 @@ function setprompt() {
 	PROMPT="%B%F{$PCLR}[%f%F{cyan}%?%f%F{$PCLR}][%n%f %F{cyan}%1~%f%F{$PCLR}]$BRANCH%#%f%F{cyan}:%f%b "
 }
 
-
-
-[ "$TTY" = "/dev/tty1" ] && startx
-
 function preexec() {
 	PROGRAMNAME="$1"
 	timer=$(($(date +%s%0N)/1000000))
@@ -100,19 +101,6 @@ function precmd() {
 }
 function gen() {
 head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d "\n"
-}
-
-function picka() {
-	if [ "$1" = "mrozona" ]; then
-		countdown 12m && mpv ~/Muzyka/arabic.mp3
-	else if [ "$1" = "donatello" ]; then
-		countdown 6m && mpv ~/Muzyka/arabic.mp3
-	fi
-	fi
-}
-
-function sex() {
-	countdown 12s && mpv ~/Muzyka/arabic.mp3
 }
 
 tmux
