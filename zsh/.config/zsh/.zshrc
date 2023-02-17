@@ -104,6 +104,7 @@ head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d
 }
 
 tmux
+clear
 setprompt
 
 export TERM='xterm-256color'

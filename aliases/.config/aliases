@@ -29,6 +29,7 @@ alias bat="bat --theme gruvbox-dark"
 alias grep="grep --color=auto"
 alias cat='bat -p --paging=never'
 alias adog='git adog'
+alias mimas="python3 ~/.local/share/mimas/mimasconfig.py"
 #alias gimme="sudo apt install"
 #
 
