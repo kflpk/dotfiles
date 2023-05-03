@@ -7,3 +7,5 @@ if [ -e /home/kacper/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kacper/.n
 
 
 . "$HOME/.cargo/env"
+
+export QSYS_ROOTDIR="/opt/Quartus/quartus/sopc_builder/bin"

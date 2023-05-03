@@ -178,3 +178,5 @@ fi
 if [ -e "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env"
 fi
+
+export QSYS_ROOTDIR="/opt/Quartus/quartus/sopc_builder/bin"
