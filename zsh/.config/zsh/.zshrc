@@ -27,6 +27,7 @@ function setprompt() {
 		source "$COLORFILE"
 	else
 		PCLR="yellow"
+		PACC="cyan"
 	fi
 
 	if git status > /dev/null 2>&1                                                                                                                                                                                     0.004s
@@ -36,7 +37,7 @@ function setprompt() {
 		BRANCH=""
 	fi
 
-	PROMPT="%B%F{$PCLR}[%f%F{cyan}%?%f%F{$PCLR}][%n%f %F{cyan}%1~%f%F{$PCLR}]$BRANCH%#%f%F{cyan}:%f%b "
+	PROMPT="%B%F{$PCLR}[%f%F{$PACC}%?%f%F{$PCLR}][%n%f %F{$PACC}%1~%f%F{$PCLR}]$BRANCH%#%f%F{$PACC}:%f%b "
 }
 
 function preexec() {
