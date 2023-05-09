@@ -14,18 +14,6 @@ source ~/.config/aliases
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#PATH
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:/opt/lampp"
-export PATH="$PATH:/snap/bin"
-export PATH="$PATH:~/programs/bin"
-export PATH="$PATH:/home/kacper/programs/bin/eagle"
-export PATH="$PATH:/snap/bin"
-export PATH="$PATH:/home/kacper/.local/bin"
-export PATH="$PATH:$HOME/bin:/usr/local/bin"
-export PATH="$PATH:/home/kacper/.spicetify"
-#PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
-
 rm ~/.lesshst 2>/dev/null
 
 #KEYBINDS
@@ -33,25 +21,13 @@ rm ~/.lesshst 2>/dev/null
 #bindkey ';5C' forward-word
 
 function setprompt() {
+	COLORFILE="$ZDOTDIR/custom_color.zsh"
 
-	case $(cat /etc/hostname) in
-		marcinek)
-			PCLR="red"
-			#PROMPT="%B%F{red}[%f%F{cyan}%?%f%F{red}][%n%f %F{cyan}%1~%f%F{red}]%#%f%F{cyan}:%f%b "
-		;;
-		jerusalem)
-			PCLR="green"
-			#PROMPT="%B%F{green}[%f%F{cyan}%?%f%F{green}][%n%f %F{cyan}%1~%f%F{green}]%#%f%F{cyan}:%f%b "
-		;;
-		alpine)
-			PCLR="blue"
-			#PROMPT="%B%F{blue}[%f%F{cyan}%?%f%F{blue}][%n%f %F{cyan}%1~%f%F{blue}]%#%f%F{cyan}:%f%b "
-		;;
-		*)
-			PCLR="yellow"
-			#PROMPT="%B%F{yellow}[%f%F{cyan}%?%f%F{yellow}][%n%f %F{cyan}%1~%f%F{yellow}]%#%f%F{cyan}:%f%b "
-		;;
-	esac
+	if [ -e "$COLORFILE" ]; then
+		source "$COLORFILE"
+	else
+		PCLR="yellow"
+	fi
 
 	if git status > /dev/null 2>&1                                                                                                                                                                                     0.004s
 	then
