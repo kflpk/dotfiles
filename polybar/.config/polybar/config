@@ -65,6 +65,7 @@ module-margin-left = 0.5
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
+#font-0 = Fira Code Nerd Font:size=11;1
 #font-0 = Ubuntu Mono:size=11;1
 font-1 = Fira Code:size=11;1
 font-2 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
@@ -74,10 +75,10 @@ font-3 = Fira Code:size=11;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = apt-upgradable ram linode pi_storage storage cpu-temp volume
+modules-right = apt-upgradable storage ram cpu-temp volume date
 
 tray-position = right
-ray-padding = 2
+ray-padding = 4
 ;tray-background = #0063ff
 ;override-redirect = true
 ;scroll-up = bspwm-desknext
@@ -113,7 +114,8 @@ padding-right = 1
 module-margin-left = 0.5
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+#font-0 = fixed:pixelsize=10;1
+font-0 = Fira Code Nerd Font
 #font-0 = Ubuntu Mono:size=11;1
 font-1 = Ubuntu Mono:size=11;1
 font-2 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
@@ -164,7 +166,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
 
-modules-right = wired-network corona popup-calendar bspwm
+modules-right = wired-network corona popup-calendar bspwm corona
 
 [bar/vertical]
 monitor = DVI-D-1
@@ -194,7 +196,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
 
-modules-left = bspwm
+modules-left = bspwm 
+modules-right = corona date
 
 [module/xwindow]
 type = internal/xwindow
@@ -327,7 +330,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "󰈸󰈸 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -382,7 +385,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date =
+date = 
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -545,7 +548,7 @@ margin-bottom = 0
 [module/apt-upgradable]
 type = custom/script
 format-foreground = ${colors.foreground}
-format-prefix = "📦 "
+format-prefix = "󰏔"
 format-underline = ${colors.primary}
 format-padding = 1
 label = "%output%"
@@ -596,6 +599,8 @@ label = "%output%"
 initial = 1
 interval = 10
 exec = $HOME/.scripts/polybar/storage
+click-left = (bspc rule -a \* -o state=floating && alacritty -e ncdu) &
+
 
 [module/linode]
 type = custom/script
@@ -629,6 +634,7 @@ format-prefix = "🔊 "
 format-underline = ${colors.primary}
 format-padding = 1
 label = "%output%"
+click-left = (bspc rule -a \* -o state=floating && alacritty -e pulsemixer) &
 initial = 1
 
 [module/corona]

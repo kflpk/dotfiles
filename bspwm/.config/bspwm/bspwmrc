@@ -22,9 +22,8 @@ bspc monitor DVI-D-1 -d 💬 2 3
 [ "$(cat /etc/hostname)" = "arch" ] && xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x420 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x420 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
 [ "$(cat /etc/hostname)" = "asus" ] && xrandr --output e-DP-1-1 --mode 1366x768
 [ "$(cat /etc/hostname)" = "msi" ] && xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x420 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x420 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 3840x0 --rotate left
-bspc monitor DVI-D-0 -d 💬 2 3 
+bspc monitor DVI-D-1 -d 💬 2 3 
 bspc monitor HDMI-0 -d 4 5 6 🎮
-bspc monitor DVI-D-1 -d 8 9 0
 
 [ "$(cat /etc/hostname)" = "asus" ] && bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9 0
 
@@ -36,8 +35,8 @@ bspc config normal_border_color "#282828"
 bspc config urgen_border_color "#ea6962"
 bspc config active_border_color "#89b482"
 
-bspc config border_width         5
-bspc config window_gap         	10
+bspc config border_width         2
+bspc config window_gap			5
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -71,6 +70,7 @@ bspc rule -a Bitwarden state=pseudo_tiled
 bspc rule -a Bijiben state=pseudo_tiled
 bspc rule -a File-roller state=floating
 bspc rule -a FirstGame desktop=^7 follow=on state=fullscreen
+bspc rule -a Xviewer state=floating
 
 #SCRIPTS
 ~/.scripts/bspwm/cleanfullscreen

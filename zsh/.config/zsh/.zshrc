@@ -19,6 +19,9 @@ rm ~/.lesshst 2>/dev/null
 #KEYBINDS
 #bindkey ';5D' backward-word
 #bindkey ';5C' forward-word
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+bindkey '^R' history-incremental-search-backward
 
 function setprompt() {
 	COLORFILE="$ZDOTDIR/custom_color.zsh"
@@ -38,6 +41,11 @@ function setprompt() {
 	fi
 
 	PROMPT="%B%F{$PCLR}[%f%F{$PACC}%?%f%F{$PCLR}][%n%f %F{$PACC}%1~%f%F{$PCLR}]$BRANCH%#%f%F{$PACC}:%f%b "
+
+	if (( ${+VIRTUAL_ENV} )); then
+		PROMPT="%B%F{$PCLR}(%f%F{$PACC}$(basename "$VIRTUAL_ENV")%f%F{$PCLR})$PROMPT"
+		
+	fi
 }
 
 function preexec() {

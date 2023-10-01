@@ -10,7 +10,7 @@ super + d
 	rofi -show drun
 #file manager
 super + e
-	pcmanfm
+	nemo
 #ranger
 super + shift + e
 	alacritty -e ranger
@@ -92,9 +92,7 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-#QON
-super + o
-	PWD=~/Nextcloud/Notes; QOwnNotes
+
 # my scripts
 super + x
 	$HOME/.scripts/menu.sh

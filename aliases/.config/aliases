@@ -1,37 +1,37 @@
-#/!bin/env bash
+#/!bin/bash
 alias sdn="shutdown now"
-alias build="g++ ./main.cpp -o executable"
-alias run="./executable"
-alias ls="exa --icons --group-directories-first"
-alias ll="exa --icons -lahg --group-directories-first"
-alias tree="ls -T"
 alias md="mkdir -v -p"
-alias zshrc="$EDITOR ~/.config/zsh/.zshrc"
 alias yt="youtube-dl --add-metadata -ic" 
 alias ytaudio="youtube-dl --add-metadata -xic"
 alias pacman="pacman --color always"
 alias tmux="tmux -2"
-alias si="sudo snap install"
-alias ai="sudo apt install" 
 alias update="yes | sudo apt update  && yes | sudo apt upgrade"
-alias aliases="nvim ~/.config/aliases"
-alias wmconf="nvim ~/.config/bspwm/bspwmrc"
-alias hotkeys="nvim ~/.config/sxhkd/sxhkdrc"
-alias pbc="nvim ~/.config/polybar/config"
-alias alc="$EDITOR ~/.config/alacritty/alacritty.yml"
-alias cfg="$EDITOR -S ~/.cfg"
 alias stowroot="sudo stow --target=/root"
-alias vimrc="$EDITOR ~/.config/nvim/init.vim"
 alias ytarchive='youtube-dl --download-archive "archive.log" --add-metadata --all-subs -f "bestvideo[height<=1080]+bestaudio/best" -ciw -o "%(upload_date)s %(title)s.%(ext)s"'
 alias :q="exit"
 alias llbat="exa --icons -lah --color=always | bat"
 alias bat="bat --theme gruvbox-dark"
 alias grep="grep --color=auto"
-alias cat='bat -p --paging=never'
 alias adog='git adog'
 alias mimas="python3 ~/.local/share/mimas/mimasconfig.py"
-#alias gimme="sudo apt install"
-#
+
+alias zshrc="$EDITOR ~/.config/zsh/.zshrc"
+alias aliases="$EDITOR ~/.config/aliases"
+alias wmconf="$EDITOR ~/.config/bspwm/bspwmrc"
+alias hotkeys="$EDITOR ~/.config/sxhkd/sxhkdrc"
+alias pbc="$EDITOR ~/.config/polybar/config"
+alias alc="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias vimrc="$EDITOR ~/.config/nvim/init.vim"
+
+if type bat >> /dev/null ; then
+	alias cat='bat -p --paging=never'
+fi
+
+if type exa  >> /dev/null; then
+	alias ls="exa --icons --group-directories-first"
+	alias ll="exa --icons -lahg --group-directories-first"
+	alias tree="ls -T"
+fi
 
 if [ -e /bin/apt ]; then
   alias gimme="sudo apt install"

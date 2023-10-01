@@ -29,6 +29,28 @@ colors:
     white:   '0xdfbf8e'
 font:
   normal:
-    family: JetBrainsMonoNL
+    family: JetBrains Mono Nerd Font
     style: Regular
   size: 10
+  # bell:
+  #   animation: Linear
+  #   color: '#ff00ff'
+  #   duration: 500
+  #   command:
+  #     program: notify-send
+  #     args: [ "siemanko" ]
+  # Visual Bell Animation
+  #
+  # Animation effect for flashing the screen when the visual bell is rung.
+  #
+  # Values for `animation`:
+  # animation: Ease
+  # animation: EaseOut
+  # animation: EaseOutSine
+  # animation: EaseOutExpo
+  # animation: EaseOutQuad
+  # animation: EaseOutCubic
+  # animation: EaseOutQuart
+  # animation: EaseOutQuint
+  # animation: EaseOutExpo
+  # animation: EaseOutCirc
