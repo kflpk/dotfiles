@@ -35,7 +35,7 @@ function setprompt() {
 
 	if git status > /dev/null 2>&1                                                                                                                                                                                     0.004s
 	then
-		BRANCH="%f%B%F{$PCLR}(%f%F{cyan}$(git status | awk '{print $NF}' | sed 1q)%f%F{$PCLR})"
+		BRANCH="%f%B%F{$PCLR}(%f%F{$PACC}$(git status | awk '{print $NF}' | sed 1q)%f%F{$PCLR})"
 	else
 		BRANCH=""
 	fi
