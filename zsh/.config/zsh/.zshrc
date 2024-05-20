@@ -7,6 +7,7 @@ if [[ ! -f $HISTFILE ]] then # Creates history file if it doesn't exist
 	mkdir -p ~/.cache/zsh
 	touch "$HISTFILE"
 fi
+
 HISTSIZE=100000000
 SAVEHIST=100000000
 
@@ -19,9 +20,17 @@ rm ~/.lesshst 2>/dev/null
 #KEYBINDS
 #bindkey ';5D' backward-word
 #bindkey ';5C' forward-word
+#set -o vi
+bindkey -v
+# fix for broken backspace
+bindkey "^H" backward-delete-char
+bindkey "^?" backward-delete-char
+
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 bindkey '^R' history-incremental-search-backward
+
+
 
 function setprompt() {
 	COLORFILE="$ZDOTDIR/custom_color.zsh"
