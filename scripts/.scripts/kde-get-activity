@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CurrentActivity=$(dbus-send --session --dest=org.kde.ActivityManager \
+  --type=method_call --print-reply=literal /ActivityManager/Activities \
+  org.kde.ActivityManager.Activities.CurrentActivity | tr -d "[:blank:]")
+
+dbus-send --session --dest=org.kde.ActivityManager --type=method_call \
+  --print-reply=literal /ActivityManager/Activities \
+  org.kde.ActivityManager.Activities.ActivityInformation \
+  "string:$CurrentActivity" | awk 'NR==2 {printf "%s", $2}'
+
+
+

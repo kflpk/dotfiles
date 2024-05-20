@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CurrentActivity=$(kde-get-activity)
+case $CurrentActivity in
+	Osobiste)
+		profile=personal
+		;;
+	Praca)
+		profile=work
+		;;
+	Uczelnia)
+		profile=agh
+		;;
+	*)
+		profile=personal
+	;;
+esac
+
+firefox $@ -P $profile
