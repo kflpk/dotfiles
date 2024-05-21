@@ -92,4 +92,23 @@ tmux
 clear
 setprompt
 
+function waitForChange(){
+      FILE=$1
+      CMD=$2
+      OLD=$(ls -la | grep $FILE | awk '{ print $8 }')
+      NEW=""
+ 
+      eval "$CMD"
+      while [ True ]; do
+          sleep 1
+          NEW=$(ls -la | grep $FILE | awk '{ print $8 }')
+          #echo Old: $OLD
+          #echo New: $NEW
+          if [ $OLD != $NEW ]; then
+              OLD=$NEW
+              eval "$CMD"
+          fi
+     done
+ }
+
 export TERM='xterm-256color'

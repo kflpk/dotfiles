@@ -324,7 +324,9 @@ song_window_title_format = {%a - }{%t}|{%f} - ncmpcpp
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = "▃▃▃"
+#progressbar_look = "▃▃▃"
+#progressbar_look = ""
+progressbar_look = "-|"
 #
 ## Available values: database, playlist.
 ##
@@ -533,9 +535,9 @@ progressbar_look = "▃▃▃"
 #
 #color2 = green
 #
-#progressbar_color = black:b
+#progressbar_color = green:b
 #
-#progressbar_elapsed_color = green:b
+progressbar_elapsed_color = green:b
 #
 #statusbar_color = default
 #
@@ -554,3 +556,5 @@ visualizer_output_name = "Visualizer feed"
 visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
 visualizer_look = "━╏"
+visualizer_spectrum_smooth_look = "yes"
+#visualizer_spectrum_dft_size = 1
