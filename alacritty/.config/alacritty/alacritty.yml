@@ -29,7 +29,8 @@ colors:
     white:   '0xdfbf8e'
 font:
   normal:
-    family: JetBrains Mono Nerd Font
+    #family: JetBrains Mono Nerd Font
+    family: FiraCode Nerd Font
     style: Regular
   size: 10
   # bell:
