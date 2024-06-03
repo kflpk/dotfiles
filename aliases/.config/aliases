@@ -14,6 +14,7 @@ alias bat="bat --theme gruvbox-dark"
 alias grep="grep --color=auto"
 alias adog='git adog'
 alias mimas="python3 ~/.local/share/mimas/mimasconfig.py"
+alias svn="svn --config-dir $XDG_CONFIG_HOME/svn"
 
 alias zshrc="$EDITOR ~/.config/zsh/.zshrc"
 alias aliases="$EDITOR ~/.config/aliases"
