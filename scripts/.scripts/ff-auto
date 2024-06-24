@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 CurrentActivity=$(kde-get-activity)
 case $CurrentActivity in
 	Osobiste)
