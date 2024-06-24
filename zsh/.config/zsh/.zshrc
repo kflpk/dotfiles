@@ -99,6 +99,9 @@ head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d
 
 tmux
 clear
+
+eval "$(zoxide init zsh --cmd cd)"
+
 setprompt
 
 function waitForChange(){
@@ -120,4 +123,3 @@ function waitForChange(){
      done
  }
 
-export TERM='xterm-256color'
