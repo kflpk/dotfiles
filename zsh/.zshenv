@@ -7,6 +7,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$XDG_DATA_HOME"
+
 
 # $HOME cleanup
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -24,8 +26,9 @@ export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
 # ZSH configuration
 #
 #zsh config dotfiles
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION # zsh autocomplete cache
+
 export ZDOTDIR="$HOME/.config/zsh" # zsh dotfiles location
+#
 #export HISTFILE="$XDG_DATA_HOME"/zsh/history # zsh history file
 
 # adb variables, shamelessly copied from archwiki, not sure if it's gonna be useful ever
@@ -43,6 +46,7 @@ export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/node_modules/.bin"
+export PATH="$PATH:$HOME/.config/emacs/bin/"
 
 if [ -e $CARGO_HOME/env ]; then
 	source "$CARG_HOME//env" 2>/dev/null

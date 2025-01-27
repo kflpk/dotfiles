@@ -2,6 +2,10 @@ ENABLE_CORRECTION="true"
 export EDITOR=nvim
 setopt appendhistory autocd beep extendedglob nomatch notify
 
+## autocomplete
+autoload -Uz compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION # zsh autocomplete cache
+
 HISTFILE=~/.cache/zsh/history
 if [[ ! -f $HISTFILE ]] then # Creates history file if it doesn't exist
 	mkdir -p ~/.cache/zsh
@@ -123,3 +127,12 @@ function waitForChange(){
      done
  }
 
+function fingerprint() {   ssh-keygen -lf $1 -E sha256 }
+
+# Notes
+n() { $EDITOR ~/.notes/"$*" } 
+ni() { echo $2 >> ~/.notes/"$1" }
+nls() { exa -l ~/.notes/ | grep "$*" }
+nr() { rm ~/.notes/"$*" }
+ns() { grep -C 5 "$*" ~/.notes/* }
+nv() { cat ~/.notes/"$*" }

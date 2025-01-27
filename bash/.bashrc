@@ -175,8 +175,8 @@ if [ "$HOSTNAME" = "student.agh.edu.pl" ]; then
 	exit
 fi
 
-if [ -e "$HOME/.cargo/env" ]; then
-	. "$HOME/.cargo/env"
-fi
+eval "$(zoxide init bash --cmd cd)"
 
-export QSYS_ROOTDIR="/opt/Quartus/quartus/sopc_builder/bin"
+
+
+
