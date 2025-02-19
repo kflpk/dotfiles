@@ -10,7 +10,6 @@ alias stowroot="sudo stow --target=/root"
 alias ytarchive='youtube-dl --download-archive "archive.log" --add-metadata --all-subs -f "bestvideo[height<=1080]+bestaudio/best" -ciw -o "%(upload_date)s %(title)s.%(ext)s"'
 alias :q="exit"
 alias llbat="exa --icons -lah --color=always | bat"
-alias bat="bat --theme gruvbox-dark"
 alias grep="grep --color=auto"
 alias adog='git adog'
 alias mimas="python3 ~/.local/share/mimas/mimasconfig.py"
@@ -23,8 +22,11 @@ alias hotkeys="$EDITOR ~/.config/sxhkd/sxhkdrc"
 alias pbc="$EDITOR ~/.config/polybar/config"
 alias alc="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias vimrc="$EDITOR ~/.config/nvim/init.vim"
+alias fzf-tmux="fzf-tmux -p 70%,60%"
+alias fzf="fzf-tmux" 
 
 if type bat >> /dev/null ; then
+	alias bat="bat --theme gruvbox-dark"
 	alias cat='bat -p --paging=never'
 fi
 
@@ -32,6 +34,8 @@ if type exa  >> /dev/null; then
 	alias ls="exa --icons --group-directories-first"
 	alias ll="exa --icons -lahg --group-directories-first"
 	alias tree="ls -T"
+else 
+	alias ll='ls -lah'
 fi
 
 if [ -e /bin/apt ]; then
