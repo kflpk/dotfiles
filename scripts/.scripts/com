@@ -1,0 +1,3 @@
+#!/bin/bash
+
+com_port=$(find /dev \( -iname 'ttyUSB*' -o -iname 'ttyACM*' \) | sort | fzf-tmux -p 70%,60% ) && baudrate=$(echo -e '115200\n9600' | fzf) && config=$(echo -e "cc\n") && minicom -D $com_port -b $baudrate $config

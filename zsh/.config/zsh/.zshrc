@@ -1,6 +1,6 @@
 ENABLE_CORRECTION="true"
 export EDITOR=nvim
-setopt appendhistory autocd beep extendedglob nomatch notify
+setopt appendhistory autocd beep extendedglob nomatch notify histignoredups 
 
 ## autocomplete
 autoload -Uz compinit
@@ -101,7 +101,13 @@ function gen() {
 head -n 4096 /dev/urandom | strings | grep -o "[[:alnum:]]" | head -n $1 | tr -d "\n"
 }
 
-tmux
+
+# don't launch tmux in vscode for proper shell integration
+[[ "$TERM_PROGRAM" == "vscode" ]] || tmux
+
+# vscode integration
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 clear
 
 eval "$(zoxide init zsh --cmd cd)"
